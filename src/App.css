@@ -1,0 +1,160 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+li.done label {
+    color: black;
+    text-decoration: line-through;
+}
+
+
+/* .todoItems{
+
+} */
+
+
+/* li.done label {
+    text-decoration: none;
+    position: relative;
+} */
+
+
+/* li.done label:after {
+    content: ' ';
+    font-size: inherit;
+    /* display: block; */
+
+
+/* position: absolute; */
+
+
+/* right: 0;
+    left: 0;
+    top: 40%;
+    bottom: 40%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+} */
+
+.all {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.form {
+    border-style: solid;
+    border-color: white;
+}
+
+.todo {
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+}
+
+.test {
+    border-style: ridge;
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.values {
+    padding: 5px 70px;
+}
+
+.addtask {
+    padding: 5px 14px;
+   
+}
+
+.footer {
+    border-style: ridge;
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.two {
+    display: inline-flex;
+    border-style: ridge;
+    padding: 0px 2px;
+}
+
+.completed {
+    background-color: black;
+    color: white;
+    padding: 0px 20px;
+    border-color: black;
+}
+
+.style {
+    display: flex;
+    justify-content: space-between;
+}
+
+.change {
+    background-color: ghostwhite;
+    box-sizing: border-box;
+    border-style: ridge;
+    transition: transform .2s;
+}
+
+
+/* .change:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+} */
+
+.delete {
+    background-color: white;
+    color: black;
+ 
+    /* display: none; */
+}
+
+a.hover {
+    display: initial;
+}
+
+
+/* .ritesh {
+    display: flex;
+    justify-content: space-between;
+} */
