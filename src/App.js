@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import AddList from './Add Items';
+import AddList from './AddItems'
+
 
 class App extends Component {
   render() {
     return (
-     <AddList/>
+      <div>
+        <AddList />
+      </div>
     );
+
   }
 }
 

@@ -110,10 +110,12 @@ todos:newTodos
                 </Typography>
             </Toolbar>
         </AppBar>
-                 <div className="all">            
-              <form className="form" onSubmit={this.handleSubmit.bind(this)}>
+                 <div className="all">      
+                   <div>      
+              
               <div className="todo"> TODO-HOMEWORK </div>
                 <button onClick={this.selectAll.bind(this)} onDoubleClick={this.deselectAll.bind(this)}>SelectALL </button>
+                <form className="form" onSubmit={this.handleSubmit.bind(this)}>
               <div className="test">
                 <input className="values" onChange={this.handleChange.bind(this)} value={this.state.title} />
                <button className="addtask" disabled={!this.state.title}>	
@@ -124,7 +126,8 @@ todos:newTodos
               handleDone={this.handleDone.bind(this)}
                 handleDelete={this.handleDelete.bind(this)}
                 todos={this.state.todos}  />
-                  <footer className="footer">
+                </form>
+                <footer className="footer">
                 <div className="two">
                 <div> 
                 All:({this.state.todos.length})
@@ -144,7 +147,7 @@ todos:newTodos
                 <button className="completed" onClick={this.handleClearCompleted.bind(this)}>Clear Completed</button>
                
                 </footer>
-                </form>
+                </div>
                 </div>
 </React.Fragment>
 

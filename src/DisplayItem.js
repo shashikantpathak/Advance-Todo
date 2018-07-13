@@ -52,6 +52,7 @@ export default class DisplayItem extends Component {
         var editStyle = {};
         if (this.state.editing) {
             viewStyle.display = 'none';
+            editStyle.paddingLeft='240px';
         } else {
             editStyle.display = 'none';
         }
