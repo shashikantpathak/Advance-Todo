@@ -11,8 +11,6 @@ export default class DisplayItem extends Component {
         };
     }
  
-    
-
     componentDidMount() {
         this.setState({
             changedText: this.props.todo.title
@@ -24,10 +22,8 @@ export default class DisplayItem extends Component {
             editing: true,
             changedText: this.props.todo.title
         });
-        
-
     }
-
+// to let edit the input set the keyCoded to 13
     handleEditingDone(event) {
         if (event.keyCode === 13) {
             this.setState({
@@ -36,7 +32,7 @@ export default class DisplayItem extends Component {
            
         }
     }
-
+// edit the todo method
     handleEditingChange(event) {
         var _changedText = event.target.value;
         this.setState({
@@ -50,6 +46,7 @@ export default class DisplayItem extends Component {
         var todo = this.props.todo;
         var viewStyle = {};
         var editStyle = {};
+//         define styling on click event for editing 
         if (this.state.editing) {
             viewStyle.display = 'none';
             editStyle.paddingLeft='240px';
@@ -68,6 +65,7 @@ export default class DisplayItem extends Component {
                                 }}
                                 checked={todo.done}
                                 onChange={this.props.handleDone.bind(null, todo.id)} />
+//                                     display all the todo here
                             <label className="todoItems">{changedText}</label>
                         </div>
                         <a className="delete" href='a' onClick={this.props.handleDelete.bind(null, todo.id)} >
@@ -77,6 +75,7 @@ export default class DisplayItem extends Component {
                 
 
                     </div>
+// invoke the input for editing todo on double click
                     <input type="text" className="displayitem"
                         onKeyDown={this.handleEditingDone.bind(this)}
                         onChange={this.handleEditingChange.bind(this)}
@@ -88,9 +87,3 @@ export default class DisplayItem extends Component {
     }
 
 }
-
-// DisplayItem.propTypes={
-//     todo:React.PropTypes.object.isRequired,
-//     handleDone:React.PropTypes.func.isRequired,
-//     handleDelete:React.PropTypes.func.isRequired
-// }
