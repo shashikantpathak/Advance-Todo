@@ -14,11 +14,12 @@ export default class AddList extends Component{
   constructor () {
     super();
     this.state = { title: '',
+//                   store the values in todos
      todos:
       [
-        {title:'eggs', done:false, id:1},
-        {title:'banana', done:false, id:2},
-        {title:'bread', done:false, id:3}
+        {title:'corejava', done:false, id:1},
+        {title:'go', done:false, id:2},
+        {title:'reactjs', done:false, id:3}
       ] };
   }
 
@@ -30,7 +31,7 @@ export default class AddList extends Component{
 
     localStorage.setItem(key, value);
   }
-
+// perform check operation
   handleDone(idToBeMarkedAsDone){
   var _todos=this.state.todos;
   var todo=_todos.filter((todo)=>{
@@ -41,7 +42,7 @@ export default class AddList extends Component{
     todo:_todos
   });
   }
-
+// perform delete operation
   handleDelete (idToBeDeleted) {
     var newTodos = this.state.todos.filter( (todo) => {
       return todo.id !== idToBeDeleted;
@@ -50,7 +51,7 @@ export default class AddList extends Component{
     this.setState({ todos: newTodos });
     localStorage.setItem("todos", JSON.stringify(newTodos));
   }
-
+// submit the todo task
   handleSubmit (event) {
     event.preventDefault();
     var title = this.state.title;
@@ -63,7 +64,7 @@ export default class AddList extends Component{
     localStorage.setItem('todos', JSON.stringify(newTodos));
     localStorage.setItem("title","");
   }
-
+// define the local storage function 
   hydrateStateWithLocalStorage() {
     for (let key in this.state) {
       if (localStorage.hasOwnProperty(key)) {
@@ -77,7 +78,7 @@ export default class AddList extends Component{
       }
     }
   }
-
+// load the local storage function
   componentDidMount() {
     this.hydrateStateWithLocalStorage();
  }
@@ -87,7 +88,7 @@ export default class AddList extends Component{
  
     this.setState({ title: title });
   }
-
+// delete the completed task
   handleClearCompleted(event){
     var newTodos=this.state.todos.filter((todo)=>{
       return !todo.done;
@@ -122,6 +123,7 @@ todos:newTodos
                Add Button
                </button>
                </div>
+// pass the values from parent to child component
               <DisplayList className="displayList"
               handleDone={this.handleDone.bind(this)}
                 handleDelete={this.handleDelete.bind(this)}
@@ -153,6 +155,7 @@ todos:newTodos
 
 )
   }
+//   select all todo
   selectAll() {
       var final = this.state.todos;
       final.map(function (item) {
@@ -165,6 +168,7 @@ todos:newTodos
       })
   
     }
+// deselect all todo on double click
     deselectAll(){
       var final1 = this.state.todos;
       final1.map(function (item) {
