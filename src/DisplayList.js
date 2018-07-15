@@ -5,6 +5,7 @@ import Dragula from 'react-dragula';
 export default class DisplayList extends Component {
 
     render () {
+//         implement the dragulaDecorator class here to make todos draggable
         return  <ul ref={this.dragulaDecorator} >
                   { this.props.todos.map((todo, i) => {
                       return  (  <DisplayItem
@@ -18,7 +19,7 @@ export default class DisplayList extends Component {
                   }) }
                 </ul>
       }
-
+// method to make items draggable
       dragulaDecorator = (componentBackingInstance) => {
         if (componentBackingInstance) {
           let options = { };
@@ -28,10 +29,4 @@ export default class DisplayList extends Component {
     
     }
 
-// DisplayList.protoTypes={
 
-//     todos:React.PropTypes.array.isRequired,
-//     handleDone:React.PropTypes.func.isRequired,
-//     handleDelete:React.PropTypes.func.isRequired
-
-// }
